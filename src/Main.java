@@ -9,6 +9,9 @@ public class Main {
         System.out.println(myDoctor.name);
         System.out.println(myDoctor.speciality);
 
+        Patient patient = new Patient("Alejandra", "alejandra@mail.com");
+
+/*
         int i = 0;
         int b = 2;
         b = i;
@@ -31,12 +34,14 @@ public class Main {
         System.out.println(patient1);
         System.out.println(patient.getName());
         System.out.println(patient1.getName());
-        /*
+*/
+
+/*
         patient.setWeight(54.6);
         System.out.println(patient.getWeight());
 
         patient.setPhoneNumber("1234567890");
         System.out.println(patient.getPhoneNumber());
-         */
+ */
     }
 }
