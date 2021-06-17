@@ -6,13 +6,39 @@ public class Patient {
     private String address;
     private String phoneNumber;
     private String birthday;
-    private Double weight;
-    private Double height;
+    private double weight;
+    private double height;
     private String blood;
 
     Patient (String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    // 54.5 Kg. String
+    public String getWeight() {
+        return this.weight + " Kg.";
+    }
+
+    // 54.5
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public String getHeight() {
+        return height + "Mts.";
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,7 +70,11 @@ public class Patient {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if (phoneNumber.length() > 10 || phoneNumber.length() < 10) {
+            System.out.println("El número telefónico dee ser de 10 digitos");
+        } else if (phoneNumber.length() == 10) {
+            this.phoneNumber = phoneNumber;
+        }
     }
 
     public String getBirthday() {
@@ -53,22 +83,6 @@ public class Patient {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
-    }
-
-    public Double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Double wieght) {
-        this.weight = weight;
-    }
-
-    public Double getHeight() {
-        return height;
-    }
-
-    public void setHeight(Double height) {
-        this.height = height;
     }
 
     public String getBlood() {
