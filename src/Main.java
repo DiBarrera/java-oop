@@ -1,3 +1,5 @@
+import java.util.Date;
+
 import static ui.UIMenu.*;
 
 public class Main {
@@ -6,24 +8,16 @@ public class Main {
         // showMenu();
 
         Doctor myDoctor = new Doctor("Lorena Jimenez Diaz", "Medico internista");
-        System.out.println(myDoctor.name);
-        System.out.println(myDoctor.speciality);
+        myDoctor.addAvailableAppointment(new Date(), "4pm");
+        myDoctor.addAvailableAppointment(new Date(), "10am");
+        myDoctor.addAvailableAppointment(new Date(), "1pm");
 
-        int i = 0;
-        String name = "Angel";
+        System.out.println(myDoctor.getAvailableAppointments());
 
-        Patient patient = new Patient("Alejandra", "alejandra@mail.com");
-        patient.setWeight(54.5);
-        System.out.println(patient.getWeight());
+        for (Doctor.AvailableAppointment availableAppointment: myDoctor.getAvailableAppointments()) {
+            System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
+        }
 
-        patient.setPhoneNumber("1234567890");
-        System.out.println(patient.getPhoneNumber());
-
-/*
-        int i = 0;
-        int b = 2;
-        b = i;
-        // b = 0
 
         System.out.println();
         System.out.println();
@@ -36,20 +30,28 @@ public class Main {
 
         System.out.println(patient.getName());
         System.out.println(patient1.getName());
-        patient1.setName("Manuel");
 
-        System.out.println(patient);
-        System.out.println(patient1);
+        patient1.setName("Manuel");
         System.out.println(patient.getName());
         System.out.println(patient1.getName());
-*/
 
 /*
+        System.out.println(myDoctor.name);
+        System.out.println(myDoctor.speciality);
+
+        patient.setPhoneNumber("1234567890");
+        System.out.println(patient.getPhoneNumber());
+
+        int i = 0;
+        int b = 2;
+        b = i;
+        // b = 0
+
         patient.setWeight(54.6);
         System.out.println(patient.getWeight());
 
         patient.setPhoneNumber("1234567890");
         System.out.println(patient.getPhoneNumber());
- */
+*/
     }
 }
